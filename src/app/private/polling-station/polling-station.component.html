@@ -1,0 +1,157 @@
+
+<div class="container">
+  <section class="h-100">
+    <div class="container py-5 ">
+      <form  [formGroup]="pollingForm" (ngSubmit)="onPollingSearch(templateRegForm)" #templateRegForm>
+
+        <div class="card bg-color text-dark">
+          <div class="card-header bg-card-color">
+            Find Polling Station
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="state" formControlName="state" class="form-control form-control-sm" />
+                  <label class="form-label small" for="state">State</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="city" formControlName="city" class="form-control form-control-sm" />
+                  <label class="form-label small" for="city">City</label>
+                </div>
+              </div>
+
+            </div>
+
+<!--            <div class="row">-->
+<!--              <div class="col-md-6 mb-4 small">-->
+<!--                <div class="form-outline">-->
+<!--                  <input type="text" id="streetName" formControlName="streetName" class="form-control form-control-sm" />-->
+<!--                  <label class="form-label small" for="streetName">Street Name</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-md-6 mb-4 small">-->
+<!--                <div class="form-outline">-->
+<!--                  <input type="text" id="state" formControlName="state" class="form-control form-control-sm" />-->
+<!--                  <label class="form-label small" for="state">State</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+
+            <div class="row">
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="county" formControlName="county" class="form-control form-control-sm" />
+                  <label class="form-label small" for="county">County</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="zipcode" formControlName="zipcode" class="form-control form-control-sm" />
+                  <label class="form-label small" for="zipcode">Zip Code</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-0">
+              <div class="col-xl-12">
+                <div class="d-flex justify-content-end pt-3">
+                  <button type="reset" class="btn btn-light btn-group-sm">Reset all</button>
+                  <button type="submit" class="btn bg-card-color btn-group-sm ms-2">Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+          </div>
+        </div>
+        <div class="card bg-color text-light" *ngIf="pollingStation!=undefined">
+          <div class="card-header bg-card-color">
+           These are the Polling station result found [{{pollingStation.length}}]
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 small">
+                <div class="card bg-color text-dark" *ngFor="let polling of pollingStation">
+                  <div class="card-header">
+                    Polling Id: {{polling.pollingId}}
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-6 mb-4 small">
+                        <div class="row">
+                          <div class="col-md-6 mb-4 small">
+                            <div class="form-outline">
+                              <label class="form-label small">City: </label>
+                            </div>
+                          </div>
+                          <div class="col-md-6 mb-4 small">
+                            <div class="form-outline">
+                              <label class="form-label small"> {{polling.city}}</label>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 mb-4 small">
+                        <div class="row">
+                          <div class="col-md-6 mb-4 small">
+                            <div class="form-outline">
+                              <label class="form-label small">Zip: </label>
+                            </div>
+                          </div>
+                          <div class="col-md-6 mb-4 small">
+                            <div class="form-outline">
+                              <label class="form-label small"> {{polling.zipcode}}</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-4 small">
+                        <div class="row">
+                          <div class="col-md-6 mb-4 small">
+                            <div class="form-outline">
+                              <label class="form-label small">Address: </label>
+                            </div>
+                          </div>
+                          <div class="col-md-6 mb-4 small">
+                            <div class="form-outline">
+                              <label class="form-label small"> {{polling.address}}</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4 small">
+                        <div class="row">
+                          <div class="col-md-6 mb-4 small">
+                            <div class="form-outline">
+                              <label class="form-label small bold">County: </label>
+                            </div>
+                          </div>
+                          <div class="col-md-6 mb-4 small">
+                            <div class="form-outline">
+                              <label class="form-label small"> {{polling.county}}</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

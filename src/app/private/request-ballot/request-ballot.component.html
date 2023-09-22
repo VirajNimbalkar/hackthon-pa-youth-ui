@@ -1,0 +1,53 @@
+
+<div class="container">
+  <section class="h-100">
+    <div class="container py-5 ">
+      <form  [formGroup]="requestBallotForm" (ngSubmit)="onBallotMail(templateRegForm)" #templateRegForm>
+
+        <div class="card bg-color text-dark">
+          <div class="card-header bg-card-color">
+            Request mail ballot
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="country" formControlName="country" class="form-control form-control-sm" />
+                  <label class="form-label small" for="country">Country</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="city" formControlName="city" class="form-control form-control-sm" />
+                  <label class="form-label small" for="city">City</label>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="zipcode" formControlName="zipcode" class="form-control form-control-sm" />
+                  <label class="form-label small" for="zipcode">Zip Code</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-0">
+              <div class="col-xl-12">
+                <div class="d-flex justify-content-end pt-3">
+                  <button type="reset" class="btn btn-light btn-group-sm">Reset all</button>
+                  <button type="submit" class="btn bg-card-color btn-group-sm ms-2">Search</button>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

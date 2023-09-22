@@ -1,0 +1,80 @@
+
+<div class="container home-container" [ngClass]="currentCls">
+<!--  <div class="container text-center app-label">-->
+<!--    <h1>Service for you (S4Y).</h1>-->
+<!--  </div>-->
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand " href="#" routerLink="/gamiy">Y4V</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" *ngIf="isUserLogged">
+            <a class="nav-link active" aria-current="page" href="#" routerLink="/home-page">Home</a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="isUserLogged">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Voting
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/status-check">Registration Check</a></li>
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/find-candidate">Update your registration</a></li>
+              <li *ngIf="isUserLogged"><hr class="dropdown-divider"></li>
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/find-polling">Find Polling Station</a></li>
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/find-candidate">Find Candidate Details</a></li>
+              <li *ngIf="isUserLogged"><hr class="dropdown-divider"></li>
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/request-ballot">Requesting mail ballot</a></li>
+              <li *ngIf="isUserLogged"><hr class="dropdown-divider"></li>
+
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/request-ballot">How to register</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown" *ngIf="isUserLogged">
+            <a class="nav-link dropdown-toggle" href="#" id="election" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Election
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="election">
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/status-check">About Elections</a></li>
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/find-polling">Type of Elections</a></li>
+              <li *ngIf="isUserLogged"><hr class="dropdown-divider"></li>
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/find-candidate">Upcoming Elections</a></li>
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/request-ballot">Election Results</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown" *ngIf="isUserLogged">
+            <a class="nav-link dropdown-toggle" href="#" id="help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Help
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="help">
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/status-check">FAQ</a></li>
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/find-polling">Ask me</a></li>
+              <li *ngIf="isUserLogged"><hr class="dropdown-divider"></li>
+              <li *ngIf="isUserLogged"><a class="dropdown-item" href="#" routerLink="/find-candidate">Contact Us</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" *ngIf="!isUserLogged">
+            <a class="nav-link active" aria-current="page" href="#" routerLink="/register">Register</a>
+          </li>
+          <li class="nav-item" *ngIf="!isUserLogged">
+            <a class="nav-link active" aria-current="page" href="#" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item right-most" *ngIf="isUserLogged">
+            <a class="nav-link"  tabindex="-1" (click)="logout()" >Logout</a>
+          </li>
+        </ul>
+<!--        <form class="d-flex" *ngIf="isUserLogged">-->
+<!--          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--          <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--        </form>-->
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+
+

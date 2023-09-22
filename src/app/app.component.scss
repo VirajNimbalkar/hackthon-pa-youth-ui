@@ -1,0 +1,62 @@
+
+:host {
+  height: 100vh;
+  width: 100vw;
+
+  .bg-img-1 {
+    //background: beige;
+    background-image: url("../assets/yvm.jpg");
+    //background-image: url("/assets/yv3.jpeg");
+  }
+  .bg-img-none {
+    //background: beige;
+    background-image: unset;
+    //background-image: url("/assets/yv3.jpeg");
+  }
+  .home-container {
+
+    min-height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+
+   &::ng-deep {
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        height: 100px;
+        width: 100px;
+        outline: black;
+        background-size: 100%, 100%;
+        border-radius: 20%;
+        border: 1px solid black;
+        background-image: none;
+      }
+
+      .carousel-control-next-icon:after {
+        content: '>';
+        font-size: 55px;
+        color: red;
+      }
+
+      .carousel-control-prev-icon:after {
+        content: '<';
+        font-size: 55px;
+        color: red;
+      }
+    }
+  }
+  .container {
+
+    .app-label{
+      color: coral;
+      font-size: 25px;
+    }
+    //.bg-image {
+    //  background-image: url("../assets/yvm.jpg");
+    //  background-repeat: no-repeat;
+    //}
+
+  }
+  .right-most {
+    margin-left: 800px;
+  }
+}

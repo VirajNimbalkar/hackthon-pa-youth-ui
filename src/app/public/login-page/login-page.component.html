@@ -1,0 +1,14 @@
+<div class="container logic-container-cls bg-color">
+  <form  [formGroup]="loginForm" (ngSubmit)="onSubmit(templateLoginForm)" #templateLoginForm>
+    <div class="form-floating mb-3">
+      <input type="username" formControlName="username"  class="form-control bg-transparent text-light" id="floatingInput" placeholder="test">
+      <label for="floatingInput" class="bg-transparent text-dark">Login Id</label>
+    </div>
+    <div class="form-floating ">
+      <input type="password" formControlName="password"  class="form-control bg-transparent text-light" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword" class="bg-transparent text-dark">Password</label>
+    </div>
+    <div class="row mb-4"></div>
+    <input class="btn btn-primary" type="submit" value="Login">
+  </form>
+</div>

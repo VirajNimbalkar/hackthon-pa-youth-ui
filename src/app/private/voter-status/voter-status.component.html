@@ -1,0 +1,96 @@
+
+<div class="container">
+  <section class="h-100">
+    <div class="container py-5 ">
+      <form  [formGroup]="voterForm" (ngSubmit)="onVoterSearch(templateRegForm)" #templateRegForm>
+
+        <div class="card bg-color text-dark">
+          <div class="card-header bg-card-color">
+           Voter State Check
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="appNumber" formControlName="firstName" class="form-control form-control-sm" />
+                  <label class="form-label small" for="firstName">Application Number</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="date" id="birthDate" formControlName="birthDate" class="form-control form-control-sm" />
+                  <label class="form-label small" for="birthDate">Birth Date</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="firstName" formControlName="firstName" class="form-control form-control-sm" />
+                  <label class="form-label small" for="firstName">First name</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="lastName" formControlName="lastName" class="form-control form-control-sm" />
+                  <label class="form-label small" for="lastName">Last name</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="country" formControlName="country" class="form-control form-control-sm" />
+                  <label class="form-label small" for="country">Country</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <input type="text" id="zipcode" formControlName="zipcode" class="form-control form-control-sm" />
+                  <label class="form-label small" for="zipcode">Zip Code</label>
+                </div>
+              </div>
+            </div>
+            <div class="row g-0">
+              <div class="col-xl-12">
+                <div class="d-flex justify-content-end pt-3">
+                  <button type="reset" class="btn btn-light btn-group-sm">Reset all</button>
+                  <button type="submit" class="btn bg-card-color btn-group-sm ms-2 ">Search</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-0">
+              <div class="mb-4"></div>
+            </div>
+
+
+
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+          </div>
+        </div>
+        <div class="card bg-color text-dark" *ngIf="voterStatus!=undefined">
+          <div class="card-header bg-card-color">
+            Voter State Check Result
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 mb-4 small">
+                <div class="form-outline">
+                  <label class="form-label small">Application Status</label>
+                  <label class="form-label small " [ngClass]="{'text-success':voterStatus.status=='Successful','text-danger':voterStatus.status=='Rejected','text-warning':voterStatus.status=='Not Found'}"> : {{voterStatus.status}}</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

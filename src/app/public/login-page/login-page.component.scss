@@ -1,0 +1,29 @@
+:host {
+
+
+  .logic-container-cls {
+    margin-top: 200px;
+    padding: 10px;
+    //width: 50vw;
+    max-width: 500px;
+    height: 18vh;
+    border: #ffc147 1px solid;
+    background-image: url("/assets/yv2.jpg");
+    background-repeat: no-repeat;
+  }
+
+  .bg-color {
+    //background: beige !important;
+    //backdrop-filter: blur(10px);
+    //background: rgba(0,0,0,0.8);
+    backdrop-filter: saturate(180%) blur(10px);
+    //background: unset !important;
+    //background-image: url("/assets/yv2.jpg");
+  }
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .bg-color {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+  }
+}

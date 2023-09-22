@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+:host {
+  .gammify-cls {
+    height: 100vh;
+    width: auto;
+    //border: 1px solid black;
+
+    //background-image: repeating-conic-gradient(#ffa147 0% 25%, #ffc147 0% 50%);
+    //background-position: 0 0, 32px 32px;
+    //background-size: 100px 100px;
+    //background-color: #ffc147;
+    //background-image: url("/assets/yv2.jpg");
+    //background-image: url("/assets/yv3.jpeg");
+    //background-repeat: no-repeat;
+    & > .container {
+      max-width: unset;
+      margin: 0;
+      padding: 0;
+    }
+    & >.carousel-item {
+      height: 203px;
+      width: 377px;
+      color: white;
+    }
+  }
+  .card{
+    //margin-top: 50px;
+    font-family: "Microsoft Sans Serif";
+    font-palette: dark;
+    //background-image: url("/assets/yvm.jpg");
+    background-image: url("/assets/yv3.jpeg");
+    //margin-top: 720px;
+    //margin-top: 100px;
+    .card-body {
+      height: 500px;
+      font-family: "Microsoft Sans Serif";
+      font-size: 20px;
+    }
+       //.carousel-control-prev-icon,
+       //.carousel-control-next-icon {
+       //  height: 100px;
+       //  width: 100px;
+       //  outline: black;
+       //  background-size: 100%, 100%;
+       //  border-radius: 50%;
+       //  border: 1px solid black;
+       //  background-image: none;
+       //}
+       //
+       //.carousel-control-next-icon:after {
+       //  content: '>';
+       //  font-size: 55px;
+       //  color: red;
+       //}
+       //
+       //.carousel-control-prev-icon:after {
+       //  content: '<';
+       //  font-size: 55px;
+       //  color: white;
+       //}
+  }
+  .bg-color {
+    //background: beige !important;
+    //backdrop-filter: blur(10px);
+    background: rgba(128,128,128,0);
+    backdrop-filter: saturate(180%) blur(5px);
+    background: unset !important;
+  }
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .bg-color {
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(51px);
+    }
+  }
+
+}
